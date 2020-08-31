@@ -22,9 +22,10 @@ gulp.task('sassToCSS', function() {
 
 gulp.task('serve', function() {
   browserSync.init({
-    server: 'public'
+    server: './'
   });
   browserSync.watch('public/**/*.*').on('change', browserSync.reload);
+  browserSync.watch('*.html').on('change', browserSync.reload);
 });
 
 gulp.task('watchFiles', function() {
